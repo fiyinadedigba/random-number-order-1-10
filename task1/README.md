@@ -1,142 +1,201 @@
-# Random Number Shuffle Scripts (1–10)
+# Technical Tasks Repository
 
-![Bash](https://img.shields.io/badge/language-Bash-blue)
-![GitHub](https://img.shields.io/badge/status-Complete-brightgreen)
+This repository contains solutions to two technical tasks.
 
-Design a script that writes the numbers from 1 - 10 in random order, with a test script.
+## Tasks
 
----
+- [Task 1: Random Number Shuffle (Pure Bash)](./task1/README.md)
+- [Task 2: Monitoring a High-Performance SSL Offloading Server](./task2/README.md)
+
 
 ## Table of Contents
 
 1. [Project Description](#project-description)  
 1. [Build instructions](#build-instructions)  
-2. [Usage](#usage)  
-3. [Description](#description)  
-4. [Known limitations / bugs](#known-limitations--bugs)
-5. [Sample Output Screenshot](#sample-output-screenshot)
+2. [Usage](#usage)
+3. [Known limitations / bugs](#known-limitations--bugs)
+4. [Sample Output Screenshot](#sample-output-screenshot)
 
 ---
 
 ## Project Description
 
-This project provides multiple Bash-based implementations for generating a **random order of numbers from 1 to 10**, ensuring:
+This repository contains a **pure Bash script** to shuffle numbers within a specified range using a **scalable design**.
 
-- Each number appears **only once**  
-- The order is **randomized each time**  
+### Features
 
-Three implementations are included:
+- Uses Bash’s `$RANDOM` to generate pseudo-random numbers  
+- Fully scalable: supports any integer range, not just 1–10  
+- Supports optional deterministic seeding to reproduce the same shuffled sequence  
+- Suitable for games, demos, and learning purposes  
 
-1. **Pure Bash ($RANDOM)** – fully self-contained, implements **Fisher–Yates shuffle**  
-2. **GNU `shuf`/`gshuf`** – relies on GNU coreutils, does not explicitly implement Fisher–Yates  
-3. **Cryptographically secure (`openssl rand`)** – secure randomness, suitable for sensitive applications  
+### Testing
 
-A **test script** is included to verify correctness.
+Includes a test script (`test_random_1_to_10.sh`) that validates:
 
-> **Note:** The Fisher–Yates shuffle is an algorithm for shuffling a finite sequence.  
-> It produces a **random permutation** of elements where each possible order is equally likely.  
-> The pure Bash version implements this algorithm to shuffle numbers 1–10.
----
+- Correct number of lines  
+- All numbers are within the specified range  
+- No duplicate values  
+- All numbers in the range are present  
+
+### Design Choice: Pure Bash
+
+This solution uses a pure Bash approach because:
+
+- Simple and lightweight (no external dependencies)  
+- Cross-platform compatibility (Linux/macOS)  
+- No need for GNU `shuf` or `openssl rand`  
+- Cryptographic security is not required (`$RANDOM` is pseudo-random)  
+
+### Algorithm
+
+The script implements the **Fisher–Yates shuffle algorithm**, which generates a random permutation of a finite sequence.
+
+- Each possible ordering is equally likely  
+- Ensures no duplicates or missing values  
+- Default behavior shuffles numbers from **1 to 10**, but supports any range
+  
 
 ## Build instructions
 
-1. Clone or download the repository, or create a local folder.
+1. Clone or download this repository (or create a local folder):
+
+```bash
+git clone https://github.com/fiyinadedigba/random-number-order-1-10.git
+cd random-number-order-1-10
+
+```
 
 2. Make all scripts executable:
 
 ```bash
 chmod +x *.sh
 ```
-3. To run the GNU shuf version (gshuf) on macOS, install GNU coreutils:
-```bash
-brew install coreutils
-```
 
 
 ## Usage
 
-Run any of the scripts:
+### Run Script
+
+Run default shuffle (1–10):
 
 ```bash
-# Pure Bash version (Fisher–Yates)
 ./random_1_10.sh
-
-# GNU shuf / gshuf version
-./random_1_to_10_shuf.sh
-
-# Secure version (OpenSSL)
-./secure_random_1_to_10.sh
 ```
+
+Sample output:
+
+```
+2
+4
+7
+1
+5
+10
+9
+6
+3
+8
+```
+Run with custom range (example):
+
+```
+./random_1_10.sh 5 15
+```
+Sample output:
+
+```
+10
+15
+12
+13
+8
+11
+6
+7
+9
+5
+14
+```
+Run with custom seed (deterministic shuffle)
+
+```
+./random_1_10.sh 1 10 7
+```
+Sample output:
+
+```
+8
+7
+4
+3
+1
+9
+2
+10
+6
+5
+```
+
+> **Note:** Using the same seed will always produce the same shuffled sequence.
+> Useful for testing, demonstrations, or reproducibility.
+
+### Run Tests
 
 Run the test script to verify correctness:
 
 ```bash
 ./test_random_1_to_10.sh ./random_1_10.sh
-./test_random_1_to_10.sh ./random_1_to_10_shuf.sh
-./test_random_1_to_10.sh ./secure_random_1_to_10.sh
+```
+Output
+
+```
+TEST PASSED:  Correct number of lines (10)
+TEST PASSED:  All numbers within range 1-10
+TEST PASSED:  No duplicates
+TEST PASSED:  All numbers 1-10 present
+All tests passed!
+```
+Test random range
+
+```
+./test_random_1_to_10.sh ./random_1_10.sh 5 15 7
 ```
 
-| Test         | Description                        |
-| ------------ | ---------------------------------- |
-| Count        | Output contains exactly 10 numbers |
-| Range        | All numbers are between 1 and 10   |
-| Duplicates   | No duplicates exist                |
-| Completeness | All numbers from 1–10 are present  |
+Output
 
-
-
-
-## Description
-
-This project provides three Bash-based implementations for generating numbers from 1 - 10 in random order:
-
-| Approach                                  | Description                                               | Notes                                                                                    |
-| ----------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Pure Bash (`$RANDOM`)                     | Fully self-contained, implements **Fisher–Yates shuffle** | Fast, portable, pseudo-random; not secure for cryptography                               |
-| GNU `shuf` / `gshuf`                      | Uses GNU coreutils internal randomization                 | Simple, fast, does not explicitly implement Fisher–Yates; requires `gshuf` on macOS      |
-| Secure version (`openssl rand`) | Uses `openssl rand` for secure randomness                 | Implements Fisher–Yates shuffle with rejection sampling to avoid bias; slower but secure |
-
-### Key features of all the scripts:
-
-1. Random order for every run
-2. No duplicates
-3. Complete set of numbers from 1–10
-
+```
+TEST PASSED:  Correct number of lines (11)
+TEST PASSED:  All numbers within range 5-15
+TEST PASSED:  No duplicates
+TEST PASSED:  All numbers 5-15 present
+All tests passed!
+```
 
 
 ## Known limitations / bugs
 
-1. Scripts are fixed to range 1–10; arbitrary ranges are not supported:  
-  - You cannot pass a custom range as a command-line argument.
-  - To use a different range, you would need to manually edit the script.
-2. Pure Bash ($RANDOM) → pseudo-random, predictable; not cryptographically secure
-  - Uses Bash’s built-in $RANDOM to generate numbers.
-  - The numbers look random, but they can be predicted if someone knows the algorithm.
-  - Not safe for secure applications like passwords, encryption, or SSL/TLS.
+| Limitation                      | Notes                                                                                           |
+| ------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Not cryptographically secure    | `$RANDOM` is pseudo-random. Do **not** use for SSL/TLS, encryption, or security-critical tasks. |
+| Very large ranges may be slower | For extremely large ranges (e.g., millions), Bash performance may degrade.                      |
+| Fixed integer ranges only       | Only supports numeric ranges; floating point or negative ranges are not supported.              |
+| Deterministic seeding           | Useful for testing, but sequences are predictable if seed is known.                             |
 
-3. gshuf version → requires GNU coreutils on macOS; internal algorithm not Fisher–Yates
-  - Uses the gshuf command from GNU coreutils to shuffle numbers.
-  - On macOS, you need to install GNU coreutils first (brew install coreutils).
-  - It shuffles numbers correctly, but the exact method it uses is internal; it’s not explicitly the Fisher–Yates shuffle.
-    
-4. openssl rand version → slower execution; Bash may not be ideal for high-performance cryptography
-  - Uses openssl rand to generate truly secure random numbers.
-  - It is slower than the other two methods because of extra calculations.
-  - Bash scripts are not the best choice if you need very fast or heavy cryptographic operations.
-**For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).**
+
 
 
 
 ## Sample Output Screenshot
 
-<img width="1440" height="900" alt="Screenshot 2026-03-20 at 10 24 11" src="https://github.com/user-attachments/assets/9b689e4e-7e45-47e1-a57d-47b81f465702" />
-
-
+<img width="1440" height="900" alt="Screenshot 2026-03-20 at 13 08 33" src="https://github.com/user-attachments/assets/f0d30351-ffbb-40a5-aa46-c3296e0ab686" />
 
 
 
 
 > **Extra Notes:**  
-> Bash is widely used in companies for automation, system administration, and network monitoring tasks.  
-> The limitations mentioned for cryptography **only apply when performing heavy or production-scale secure operations**.  
-> For routine monitoring, log parsing, and automation, Bash scripts are fully practical and commonly used in professional environments.
+> For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).
+=======
+- [Task 1: Random Number Shuffle from 1 to 10](./task1/README.md)
+- [Task 2: Monitoring a High-Performance SSL Offloading Server](./task2/README.md)
+>>>>>>> 7db9d95 (Structure repo: separate Task 1 and Task 2)
