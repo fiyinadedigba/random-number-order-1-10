@@ -31,7 +31,7 @@ This repository contains a **pure Bash script** to shuffle numbers within a spec
   - No duplicates  
   - All numbers in the range are present 
 
-**Why did I use the pure Bash approach?**  
+**Why I used pure Bash approach**  
 
 - Simple, no dependencies.  
 - Cross-platform compatibility (Linux/macOS).  
@@ -46,7 +46,7 @@ This repository contains a **pure Bash script** to shuffle numbers within a spec
 
 ## Build instructions
 
-1. Clone or download this repository:
+1. Clone or download this repository (or create a local folder):
 
 ```bash
 git clone https://github.com/fiyinadedigba/random-number-order-1-10.git
