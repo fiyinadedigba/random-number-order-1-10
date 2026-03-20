@@ -181,7 +181,7 @@ All tests passed!
 | Fixed integer ranges only       | Only supports numeric ranges; floating point or negative ranges are not supported.              |
 | Deterministic seeding           | Useful for testing, but sequences are predictable if seed is known.                             |
 
-**For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).**
+
 
 
 
@@ -191,5 +191,6 @@ All tests passed!
 
 
 
+
 > **Extra Notes:**  
-> ✅ Ideal for games, demos, learning, and reproducible tests.  
+> For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).
