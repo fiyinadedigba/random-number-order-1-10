@@ -121,9 +121,14 @@ This project provides three Bash-based implementations for generating numbers fr
   - Bash scripts are not the best choice if you need very fast or heavy cryptographic operations.
 **For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).**
 
+
+
 ## Sample Output Screenshot
 
 <img width="1440" height="900" alt="Screenshot 2026-03-20 at 10 24 11" src="https://github.com/user-attachments/assets/9b689e4e-7e45-47e1-a57d-47b81f465702" />
+
+
+
 
 
 
