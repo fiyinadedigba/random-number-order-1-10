@@ -185,31 +185,21 @@ Effective alerting enables proactive incident response.
 
 Handling 25,000 requests per second requires low-overhead monitoring to avoid impacting performance.
 
----
-
 ### Data Volume
 
 Large volumes of metrics and logs require efficient storage and aggregation.
-
----
 
 ### Latency Sensitivity
 
 Small performance degradations can significantly affect user experience.
 
----
-
 ### Network Complexity
 
 High-speed interfaces may experience microbursts that are difficult to detect.
 
----
-
 ### SSL Overhead
 
 TLS handshakes can introduce CPU spikes during traffic bursts.
-
----
 
 ### Metric Correlation
 
