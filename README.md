@@ -1,11 +1,12 @@
-# Random Number Shuffle Scripts (1–10)
+# Technical Tasks Repository
 
-![Bash](https://img.shields.io/badge/language-Bash-blue)
-![GitHub](https://img.shields.io/badge/status-Complete-brightgreen)
+This repository contains solutions to two technical tasks.
 
-Design a script that writes the numbers from 1 - 10 in random order, with a test script.
+## Tasks
 
----
+- [Task 1: Random Number Shuffle (Pure Bash)](./task1/README.md)
+- [Task 2: Monitoring a High-Performance SSL Offloading Server](./task2/README.md)
+
 
 ## Table of Contents
 
@@ -194,3 +195,7 @@ All tests passed!
 
 > **Extra Notes:**  
 > For large-scale secure applications, use compiled languages or libraries (e.g., Python `secrets`, C/C++ OpenSSL, Go `crypto/rand`).
+=======
+- [Task 1: Random Number Shuffle from 1 to 10](./task1/README.md)
+- [Task 2: Monitoring a High-Performance SSL Offloading Server](./task2/README.md)
+>>>>>>> 7db9d95 (Structure repo: separate Task 1 and Task 2)
