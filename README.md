@@ -3,14 +3,14 @@
 ![Bash](https://img.shields.io/badge/language-Bash-blue)
 ![GitHub](https://img.shields.io/badge/status-Complete-brightgreen)
 
-Generate a random permutation of integers from 1 to 10 using three different approaches, with a test script to verify correctness.
+Design a script that writes the numbers from 1 - 10 in random order, with a test script to verify correctness.
 
 ---
 
 ## Table of Contents
 
 1. [Project Description](#project-description)  
-2. [Build / Setup Instructions](#build--setup-instructions)  
+2. [Build Instructions](#build--setup-instructions)  
 3. [Usage](#usage)  
 4. [Implementations](#implementations)  
    - [Pure Bash ($RANDOM)](#pure-bash-random)  
@@ -26,9 +26,9 @@ Generate a random permutation of integers from 1 to 10 using three different app
 
 ## Project Description
 
-This project provides multiple Bash-based implementations for generating a **random permutation of integers from 1 to 10**, ensuring:
+This project provides multiple Bash-based implementations for generating a **random order of numbers from 1 to 10**, ensuring:
 
-- Each number appears **exactly once**  
+- Each number appears **only once**  
 - The order is **randomized each time**  
 
 Three implementations are included:
