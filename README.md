@@ -17,7 +17,7 @@ Design a script that writes the numbers from 1 - 10 in random order, with a test
 
 ---
 
-## Description
+## Project Description
 
 This repository contains a **pure Bash script** to shuffle numbers within a specified range using a **scalable design**.
 
