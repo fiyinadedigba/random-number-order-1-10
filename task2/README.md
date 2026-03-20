@@ -133,7 +133,21 @@ Monitoring can be implemented using **Zabbix**, which provides a comprehensive p
 Custom **Bash or Python scripts** can be integrated with Zabbix to collect advanced metrics such as:
 
 - TLS handshake statistics  
-- Application-specific performance data  
+- Application-specific performance data
+
+### Alternative Monitoring Stack (Prometheus & Grafana)
+
+In addition to Zabbix, a modern monitoring stack can also be implemented using:
+
+- Prometheus for metrics collection and time-series storage  
+- Grafana for visualization and dashboards  
+
+This approach is particularly useful for:
+- High-resolution, real-time metrics
+- Flexible querying (PromQL)
+- Advanced visualization and alerting
+
+In some environments, Prometheus and Grafana can complement or replace traditional monitoring systems depending on scalability and operational requirements.
 
 ---
 
