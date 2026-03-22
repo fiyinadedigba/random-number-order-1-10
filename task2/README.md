@@ -7,7 +7,7 @@
 1. [What Does This Server Do?](#what-does-this-server-do?)
 2. [The Server](#the-server)
 3. [Interesting Metrics](#interesting-metrics)
-4. [How I'd Set This Up](#how-i'd-set-this-up)
+4. [How I'd Set This Up](#how-i--d-set-this-up)
 5. [Challenges](#challenges)
 
 ---
