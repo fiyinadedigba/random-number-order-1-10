@@ -2,9 +2,7 @@
 
 ## What Does This Server Do?
 
-When accessing a website via HTTPS, your browser and the server perform an SSL/TLS handshake to establish a secure, encrypted connection. This process is resource-intensive, especially at the outset, due to the demands of public-key cryptography.
-
-**SSL offloading** means dedicating a server to manage the entire TLS process. Clients connect over HTTPS; this server handles the handshake, decrypts the incoming request, and forwards plain HTTP to application servers behind it. On the way back, it encrypts the response before returning it to the client. This relieves application servers of TLS tasks, allowing them to focus on content delivery. The server also acts as a **reverse proxy** between the internet and backend servers, forwarding requests and responses.
+When accessing a website via HTTPS, your browser and the server perform an SSL/TLS handshake to establish a secure, encrypted connection. This process is resource-intensive, especially at the outset, due to the demands of public-key cryptography. **SSL offloading** means dedicating a server to manage the entire TLS process. Clients connect over HTTPS; this server handles the handshake, decrypts the incoming request, and forwards plain HTTP to application servers behind it. On the way back, it encrypts the response before returning it to the client. This relieves application servers of TLS tasks, allowing them to focus on content delivery. The server also acts as a **reverse proxy** between the internet and backend servers, forwarding requests and responses.
 
 ## The Server
 
