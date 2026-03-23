@@ -21,13 +21,8 @@ The server also acts as a **reverse proxy** between the internet and backend ser
 ---
 ## The Server
 
-| Resource | Spec |
-|----------|------|
-| CPU | 4 × Intel Xeon E7-4830 v4 @ 2.00 GHz — **56 physical cores** (112 with hyperthreading) |
-| RAM | 64 GB |
-| Storage | 2 TB HDD (a traditional spinning hard drive, not an SSD) |
-| Network | 2 × 10 Gbit/s NICs (network interface cards — the physical network ports) |
-| Workload | ~25,000 HTTPS requests per second |
+<img width="906" height="665" alt="Screenshot 2026-03-23 at 09 16 51" src="https://github.com/user-attachments/assets/057df198-32bc-46e3-a647-8d79b37d5cd4" />
+
 
 In this scenario (i.e at 25 req/s): 
 - **CPU** is likely the first resource to reach capacity because TLS handshake involves heavy public-key cryptography.
