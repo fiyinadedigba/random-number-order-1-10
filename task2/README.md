@@ -27,8 +27,8 @@
 | Network | 2 × 10 Gbit/s NICs (network interface cards — the physical network ports) |
 | Workload | ~25,000 HTTPS requests per second |
 
-In this scenario: 
-- **CPU** is likely the first resource to reach capacity. The TLS handshake involves heavy public-key cryptography, and at 25k req/s that adds up fast. 
+In this scenario (i.e at 25 r/s): 
+- **CPU** is likely the first resource to reach capacity because TLS handshake involves heavy public-key cryptography.
 - **Network** is the second concern at this traffic volume.
 
 >**Note**: For a proxy, **memory** and **disk** are not likely to bottleneck, but they are still worth keeping an eye on.
