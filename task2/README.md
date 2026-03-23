@@ -31,7 +31,7 @@ In this scenario:
 - **CPU** is likely the first resource to reach capacity. The TLS handshake involves heavy public-key cryptography, and at 25k req/s that adds up fast. 
 - **Network** is the second concern at this traffic volume.
 
->**Note**:For a proxy, **memory** and **disk** are not likely to bottleneck, but they are still worth keeping an eye on.
+>**Note**: For a proxy, **memory** and **disk** are not likely to bottleneck, but they are still worth keeping an eye on.
 
 ---
 ## Interesting Metrics
